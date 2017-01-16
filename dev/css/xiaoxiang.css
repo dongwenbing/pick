@@ -1,0 +1,17 @@
+.box {
+  color: #fe33ac;
+  border-color: #fdcdea;
+}
+.box div {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.dwb-body {
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto;
+  height: 100%;
+}
+.dwb-conbox {
+  width: 100%;
+}
