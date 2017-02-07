@@ -1,25 +1,14 @@
-body{height:100%;}
-body,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{ margin:0;padding:0;}
-body,button,input,select,textarea { font-family: "Microsoft YaHei","Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;}
-h1,h2,h3,h4,h5,h6{ margin:0;padding:0;font-size: 100%;}
-address,cite,dfn,em,var{ font-style:normal;}
-code,kbd,pre,samp{ font-family:'courier new',courier,monospace;}
-small{ font-size: 12px;}
-ul,ol{ list-style: none;}
-a{ text-decoration: none; color:inherit;}
-a:hover{ text-decoration:none;}
-fieldset,img{ border:0;}
-table{ border-collapse: collapse;border-spacing: 0;}
-img{ vertical-align:middle;}
-
-
-
-
-
-
-
-
-
-
-
-
+body{height:100%}
+body,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+body,button,input,select,textarea{font-family:"Microsoft YaHei","Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:100%}
+address,cite,dfn,em,var{font-style:normal}
+code,kbd,pre,samp{font-family:'courier new',courier,monospace}
+small{font-size:12px}
+ul,ol{list-style:none}
+a{text-decoration:none;color:inherit}
+a:hover{text-decoration:none}
+fieldset,img{border:0}
+table{border-collapse:collapse;border-spacing:0}
+img{vertical-align:middle}
+*{box-sizing:content-box}

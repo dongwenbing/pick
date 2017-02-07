@@ -11,38 +11,34 @@
 </head>
 
 <body>
+    <div id="selectCity">
 
-
-    <div class="box" id="selectCity">
-        <select>
+        <div class="box">
+            <select>
             <option v-for="item in items">{{item.name}}</option>
         </select>
+        </div>
+        <div class="pick-bc">
+            <ul class="pick-con" v-on:scroll="pickscorll">
+                <li class="pick-item"></li>
+                <li class="pick-item"></li>
+                <li class="pick-item" v-for="item in items">{{item.name}}</li>
+                <!--<li class="pick-item">wuhan2</li>-->
+            </ul>
+
+            <div class="pick-con-top">{{scotop}}</div>
+            <div class="pick-con-bottom"></div>
+        </div>
+
+
+
+        <script src="../js/less.js"></script>
+        <script src="../js/hotcss.js"></script>
+        <script src="../js/vue.js"></script>
+        <script src="../js/vue-resource.min.js"></script>
+        <script src="../js/pick.js"></script>
+        <script src="../controller/nvcontroller.js"></script>
     </div>
-    <div class="pick-bc">
-        <ul class="pick-con">
-            <li class="pick-item">wuhan1</li>
-            <li class="pick-item">wuhan2</li>
-            <li class="pick-item">wuhan3</li>
-            <li class="pick-item">wuhan4</li>
-            <li class="pick-item">wuhan5</li>
-            <li class="pick-item">wuhan6</li>
-            <li class="pick-item">wuhan7</li>
-            <li class="pick-item">wuhan8</li>
-            <li class="pick-item">wuhan9</li>
-        </ul>
-
-        <div class="pick-con-top"></div>
-        <div class="pick-con-bottom"></div>
-    </div>
-
-
-
-    <script src="../js/less.js"></script>
-    <script src="../js/hotcss.js"></script>
-    <script src="../js/vue.js"></script>
-    <script src="../js/vue-resource.min.js"></script>
-    <script src="../js/pick.js"></script>
-    <script src="../controller/nvcontroller.js"></script>
 </body>
 
 </html>
