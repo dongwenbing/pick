@@ -20,7 +20,7 @@
     "ProRemark": "省份"
 }, {
     "ProID": 5,
-    "name": "内蒙古自治区",
+    "name": "内蒙古",
     "ProSort": 32,
     "ProRemark": "自治区"
 }, {
@@ -100,7 +100,7 @@
     "ProRemark": "省份"
 }, {
     "ProID": 21,
-    "name": "广西壮族自治区",
+    "name": "广西",
     "ProSort": 28,
     "ProRemark": "自治区"
 }, {
@@ -115,7 +115,7 @@
     "ProRemark": "省份"
 }, {
     "ProID": 24,
-    "name": "新 疆维吾尔自治区",
+    "name": "新 疆",
     "ProSort": 31,
     "ProRemark": "自治区"
 }, {
@@ -125,7 +125,7 @@
     "ProRemark": "省份"
 }, {
     "ProID": 26,
-    "name": "宁夏回族自治区",
+    "name": "宁夏",
     "ProSort": 30,
     "ProRemark": "自治区"
 }, {
@@ -150,7 +150,7 @@
     "ProRemark": "省份"
 }, {
     "ProID": 31,
-    "name": "西藏自治区",
+    "name": "西藏",
     "ProSort": 29,
     "ProRemark": "自治区"
 }, {
@@ -160,12 +160,12 @@
     "ProRemark": "省份"
 }, {
     "ProID": 33,
-    "name": "澳门特别行政区",
+    "name": "澳门",
     "ProSort": 33,
     "ProRemark": "特别行政区"
 }, {
     "ProID": 34,
-    "name": "香港特别行政区",
+    "name": "香港",
     "ProSort": 34,
     "ProRemark": "特别行政区"
 }]

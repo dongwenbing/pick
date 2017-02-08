@@ -19,25 +19,27 @@
         </select>
         </div>
         <div class="pick-bc">
-            <ul class="pick-con" v-on:scroll="pickscorll">
+            <ul class="pick-con" v-bind:pickitemName="pickitemName" v-bind:pickitemId="pickitemId">
                 <li class="pick-item"></li>
                 <li class="pick-item"></li>
-                <li class="pick-item" v-for="item in items">{{item.name}}</li>
-                <!--<li class="pick-item">wuhan2</li>-->
+                <li v-bind:class="[pickstate==item.ProID?'pick-item-se':'','pick-item']" v-on:click="pickclick" v-for="item in items" v-bind:itemid="item.ProID">{{item.name}}</li>
+                <!--<li class="pick-item ">wuhan2</li>-->
             </ul>
 
-            <div class="pick-con-top">{{scotop}}</div>
-            <div class="pick-con-bottom"></div>
+            <div class="pick-con-top "></div>
+            <div class="pick-con-bottom "></div>
         </div>
 
 
 
-        <script src="../js/less.js"></script>
-        <script src="../js/hotcss.js"></script>
-        <script src="../js/vue.js"></script>
-        <script src="../js/vue-resource.min.js"></script>
-        <script src="../js/pick.js"></script>
-        <script src="../controller/nvcontroller.js"></script>
+        <script src="../js/less.js "></script>
+        <script src="../js/hotcss.js "></script>
+        <script src="../js/vue.js "></script>
+        <script src="../js/vue-resource.min.js "></script>
+        <script src="../js/pick.js "></script>
+        <script src="../controller/nvcontroller.js "></script>
+
+
     </div>
 </body>
 
