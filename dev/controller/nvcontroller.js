@@ -18,8 +18,10 @@
             scotop: 0,
             pickstate: 5,
             pickitemName: "",
+            pickwenbing: 0,
             pickitemId: null,
             pickcallback: function() {
+
                 alert("666");
             }
         },
@@ -48,9 +50,6 @@
                     setheight -= itemheight / 2;
                     setheight ? event.target.parentNode.scrollTop = setheight : null;
                 }
-                // debugger
-                // var bb = 55;
-
                 // var newclass = document.getElementsByClassName("pick-item-se");该方法已抛弃
                 // for (i in newclass) { newclass[i].className = "pick-item"; }
 
