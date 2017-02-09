@@ -32,13 +32,32 @@
   position: fixed;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.pick-con {
-  height: 8rem;
+.pick-box {
+  height: 9.5rem;
   width: 100%;
-  overflow-y: scroll;
   background-color: #fff;
   position: absolute;
   bottom: 0;
+}
+.pick-head span {
+  margin: 0 1rem;
+}
+.pick-head span:last-child {
+  float: right;
+  margin: 0 1rem;
+}
+.pick-head {
+  float: left;
+  width: 100%;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  color: #c4c4c4;
+}
+.pick-con {
+  height: 8rem;
+  width: 33.3333333333%;
+  float: left;
+  overflow-y: scroll;
 }
 .pick-con-top,
 .pick-con-bottom {
@@ -54,7 +73,9 @@
 }
 .pick-item,
 .pick-item-se {
+  overflow: hidden;
   width: 100%;
+  font-size: 0.9rem;
   height: 2rem;
   line-height: 2rem;
   text-align: center;

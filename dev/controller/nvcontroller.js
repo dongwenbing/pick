@@ -1,81 +1,120 @@
-    function aaa(aaa) {
-        alert("4566788");
+var vm = new Vue({
+    el: '#selectCity',
+    data: {
+        scotop: 0,
+        provincedisplay: null,
+        citydisplay: null,
+        areadisplay: null,
 
-        debugger
-        var e = 6;
-    }
+        province: null,
+        city: null,
+        area: null,
+        provinceitems: null,
+        cityitems: null,
+        areaitems: null,
+        allcity: null,
+        pickprovincestate: 5,
+        pickcitystate: 5,
+        pickareastate: 5,
+        pickprovinceName: "",
+        pickcityName: "",
+        pickareaName: "",
+        pickprovinceId: null,
+        pickcityId: null,
+        pickareaId: null
 
-    var vm = new Vue({
-        el: '#selectCity',
-        data: {
-            provincedefual: "请选择...",
-            citydefual: "请选择...",
-            area: "请选择...",
-            items: null,
-            province: null,
-            city: null,
-            area: null,
-            scotop: 0,
-            pickstate: 5,
-            pickitemName: "",
-            pickwenbing: 0,
-            pickitemId: null,
-            pickcallback: function() {
+    },
+    computed: {
+        reversedcitydisplay: function() {
+            var cityid = citydisplay;
 
-                alert("666");
-            }
+
+            return this.message.split('').reverse().join('')
+        }
+    },
+    methods: {
+        picksure: function() {
+
+
+
+
         },
-        methods: {
-            getdata: function() {
-                this.$http.get("/dev/data/nv/province.json").then(function(rtdata) {
-                        if (!rtdata) return false;
-                        rtdata = eval("(" + rtdata.body + ")");
-                        this.items = rtdata;
-                    },
-                    function(error) {})
-            },
-            pickclick: function(event, aaa) {
-                this.pickitemName = event.target.innerText;
-                this.pickitemId = event.target.attributes.itemid.value;
-                this.pickstate = event.target.attributes.itemid.value;
-                // this.pickitemId ? this.pickcallback() : null;
-
-                this.scotop = event.target.parentNode.scrollTop;
-                var itemheight = event.target.parentNode.scrollHeight / (this.items.length + 2); //这种高度暂时可不用
-                var itemlist = event.target.parentNode.children;
-                itemheight = event.target.offsetHeight;
-                var YY = Math.ceil(this.scotop / itemheight); //向上取整
-                if (YY > 0) {
-                    var setheight = YY * itemheight;
-                    setheight -= itemheight / 2;
-                    setheight ? event.target.parentNode.scrollTop = setheight : null;
-                }
-                // var newclass = document.getElementsByClassName("pick-item-se");该方法已抛弃
-                // for (i in newclass) { newclass[i].className = "pick-item"; }
-
-                //   event.target.className = "pick-items";
-                event.target.className = "pick-item-se";
-                //  debugger
-                var bb = 55;
-
-
-            },
-
-            pickscorll: function(event) {
-                this.scotop = event.target.scrollTop;
-                var itemheight = event.target.scrollHeight / (this.items.length + 2); //这种高度暂时可不用
-                var itemlist = event.target.children;
-                if (event.target.children[0]) { itemheight = event.target.children[0].offsetHeight; }
-                var YY = Math.ceil(this.scotop / itemheight); //向上取整
-                if (YY > 0) {
-                    var setheight = YY * itemheight;
-                    setheight -= itemheight / 2;
-                    setheight ? event.target.scrollTop = setheight : null;
-                }
-                debugger
-                var bb = 55;
+        pickprovinceclick: function(event) {
+            this.pickprovinceName = event.target.innerText;
+            this.pickprovinceId = event.target.attributes.itemid.value;
+            this.pickprovincestate = event.target.attributes.itemid.value;
+            var tempcity = new Array();
+            for (i in this.allcity.city) {
+                if (this.allcity.city[i].ProID == this.pickprovinceId) { tempcity.push(this.allcity.city[i]); }
             }
+            this.cityitems = tempcity;
+            this.provincedisplay = this.pickprovinceId;
+            this.citydisplay = null;
+            this.areaitems = null;
+            this.pickitemsite(event);
         },
-    })
+        pickcityclick: function(event) {
+            this.pickcityName = event.target.innerText;
+            this.pickcityId = event.target.attributes.itemid.value;
+            this.pickcitystate = event.target.attributes.itemid.value;
+            this.citydisplay = this.pickcityId;
+            var tempcity = new Array();
+            for (i in this.allcity.area) {
+                if (this.allcity.area[i].CityID == this.pickcityId) { tempcity.push(this.allcity.area[i]); }
+            }
+            this.areaitems = tempcity;
+            this.areadisplay = null;
+            this.pickitemsite(event);
+        },
+        pickareaclick: function(event) {
+            this.pickareaName = event.target.innerText;
+            this.pickareaId = event.target.attributes.itemid.value;
+            this.pickareastate = event.target.attributes.itemid.value;
+            this.areadisplay = this.pickareaId;
+            this.pickitemsite(event);
+        },
+        pickitemsite: function(event) {
+            this.scotop = event.target.parentNode.scrollTop;
+            var itemheight = 0;
+            var itemlist = event.target.parentNode.children;
+            itemheight = event.target.offsetHeight;
+            var YY = Math.ceil(this.scotop / itemheight); //向上取整
+            if (YY > 0) {
+                var setheight = YY * itemheight;
+                setheight -= itemheight / 2;
+                setheight ? event.target.parentNode.scrollTop = setheight : null;
+            }
 
-    vm.getdata();
+        },
+
+        pickscorll: function(event) {
+            this.scotop = event.target.scrollTop;
+            var itemheight = 0;
+            var itemlist = event.target.children;
+            if (event.target.children[0]) { itemheight = event.target.children[0].offsetHeight; }
+            var YY = Math.ceil(this.scotop / itemheight); //向上取整
+            if (YY > 0) {
+                var setheight = YY * itemheight;
+                setheight -= itemheight / 2;
+                setheight ? event.target.scrollTop = setheight : null;
+            }
+            this.provincedisplay = 1;
+            debugger
+            var bb = 55;
+        },
+        getdata: function() {
+            this.$http.get("/dev/data/nv/allcity.json").then(function(rtdata) {
+                    if (!rtdata) return false;
+                    rtdata = eval("(" + rtdata.body + ")");
+                    this.allcity = rtdata;
+                    this.provinceitems = rtdata.province;
+                    this.cityitems = rtdata.city;
+                    if (rtdata.length > 0) { this.provincedisplay = rtdata[0].ProID }
+                },
+                function(error) {});
+
+        }
+    },
+})
+
+vm.getdata();
