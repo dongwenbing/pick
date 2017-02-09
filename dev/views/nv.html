@@ -13,40 +13,44 @@
 <body>
     <div id="selectCity">
 
+
+
+        您选择了：
+        <div>{{pickprovinceName}}-{{pickcityName}}-{{pickareaName}}</div>
         <div class="box">
             <select>
             <option v-for="item in provinceitems">{{item.name}}</option>
         </select>
         </div>
-        <div class="pick-bc">
-            <div class="pick-box">
-                <div class="pick-head">
-                    <span>cancel</span>
-                    <span>ok</span>
+        <div v-show="pickstate">
+            <div class="pick-bc">
+                <div class="pick-box">
+                    <div class="pick-head">
+                        <span>cancel</span>
+                        <span v-on:click="picksure">ok</span>
+                    </div>
+                    <ul class="pick-con" v-bind:pickprovinceName="pickprovinceName" v-bind:pickitemId="pickprovinceId">
+                        <li class="pick-item"></li>
+                        <li class="pick-item"></li>
+                        <li v-bind:class="[pickprovincestate==item.ProID?'pick-item-se':'','pick-item']" v-on:click="pickprovinceclick" v-for="item in provinceitems" v-bind:itemid="item.ProID">{{item.name}}</li>
+                    </ul>
+                    <ul class="pick-con" v-bind:pickcityName="pickcityName" v-bind:pickcityId="pickcityId">
+                        <li class="pick-item"></li>
+                        <li class="pick-item"></li>
+                        <li v-for="item in cityitems" v-bind:class="[pickcitystate==item.CityID?'pick-item-se':'','pick-item']" v-on:click="pickcityclick" v-bind:itemid="item.CityID">{{item.name}}</li>
+                    </ul>
+                    <ul class="pick-con" v-bind:pickitemName="pickareaName" v-bind:pickitemId="pickareaId">
+                        <li class="pick-item"></li>
+                        <li class="pick-item"></li>
+                        <li v-bind:class="[pickareastate==item.AreaID?'pick-item-se':'','pick-item']" v-on:click="pickareaclick" v-for="item in areaitems" v-bind:itemid="item.AreaID">{{item.name}}</li>
+                    </ul>
 
+                    <div class="pick-con-top"></div>
+                    <div class="pick-con-bottom "></div>
                 </div>
-                <ul class="pick-con" v-bind:pickprovinceName="pickprovinceName" v-bind:pickitemId="pickprovinceId">
-                    <li class="pick-item"></li>
-                    <li class="pick-item"></li>
-                    <li v-bind:class="[pickprovincestate==item.ProID?'pick-item-se':'','pick-item']" v-on:click="pickprovinceclick" v-for="item in provinceitems" v-bind:itemid="item.ProID">{{item.name}}</li>
-                </ul>
-                <ul class="pick-con" v-bind:pickcityName="pickcityName" v-bind:pickcityId="pickcityId">
-                    <li class="pick-item"></li>
-                    <li class="pick-item"></li>
-                    <li v-for="item in cityitems" v-bind:class="[pickcitystate==item.CityID?'pick-item-se':'','pick-item']" v-on:click="pickcityclick" v-bind:itemid="item.CityID">{{item.name}}</li>
-                </ul>
-                <ul class="pick-con" v-bind:pickitemName="pickareaName" v-bind:pickitemId="pickareaId">
-                    <li class="pick-item"></li>
-                    <li class="pick-item"></li>
-                    <li v-bind:class="[pickareastate==item.AreaID?'pick-item-se':'','pick-item']" v-on:click="pickareaclick" v-for="item in areaitems" v-bind:itemid="item.AreaID">{{item.name}}</li>
-                </ul>
-
-                <div class="pick-con-top"></div>
-                <div class="pick-con-bottom "></div>
             </div>
+
         </div>
-
-
         <script src="../js/less.js "></script>
         <script src="../js/hotcss.js "></script>
         <script src="../js/vue.js "></script>

@@ -5,7 +5,7 @@ var vm = new Vue({
         provincedisplay: null,
         citydisplay: null,
         areadisplay: null,
-
+        pickstate: true,
         province: null,
         city: null,
         area: null,
@@ -35,11 +35,10 @@ var vm = new Vue({
     methods: {
         picksure: function() {
 
-
-
-
+            if (this.pickareaId && this.pickareaName) { this.pickstate = false };
         },
         pickprovinceclick: function(event) {
+
             this.pickprovinceName = event.target.innerText;
             this.pickprovinceId = event.target.attributes.itemid.value;
             this.pickprovincestate = event.target.attributes.itemid.value;
