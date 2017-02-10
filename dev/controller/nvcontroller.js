@@ -13,9 +13,9 @@ var vm = new Vue({
         cityitems: null,
         areaitems: null,
         allcity: null,
-        pickprovincestate: 5,
-        pickcitystate: 5,
-        pickareastate: 5,
+        pickprovincestate: null,
+        pickcitystate: null,
+        pickareastate: null,
         pickprovinceName: "",
         pickcityName: "",
         pickareaName: "",
@@ -102,7 +102,7 @@ var vm = new Vue({
             var bb = 55;
         },
         getdata: function() {
-            this.$http.get("/dev/data/nv/allcity.json").then(function(rtdata) {
+            this.$http.get("/pick/dev/data/nv/allcity.json").then(function(rtdata) {
                     if (!rtdata) return false;
                     rtdata = eval("(" + rtdata.body + ")");
                     this.allcity = rtdata;
